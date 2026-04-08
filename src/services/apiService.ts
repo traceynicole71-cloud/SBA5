@@ -10,4 +10,12 @@ export async function fetchProducts(): Promise<ProductData[]> {
             throw new AppError("failed to fetch product", response.status);
         }
     }
+
+    const data = await Response.json();
+    return data.products;
+} catch (error) {
+    if (error instanceof AppError) {
+        throw error;
+    }
+    throw new AppError("Error while fetching product");
 }
