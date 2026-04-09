@@ -1,20 +1,21 @@
-export class Product {
-    title: string;
-    description: string;
-    price: number;
-    discountPercentage: number;
-    category: string;
-
-    constructor(data: any) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Product = void 0;
+class Product {
+    title;
+    description;
+    price;
+    discountPercentage;
+    category;
+    constructor(data) {
         this.title = data.product;
         this.description = data.description;
         this.price = data.price;
         this.discountPercentage = data.discountPercentage;
         this.category = data.category;
     }
-
     //display details
-    displayDetails(): string {
+    displayDetails() {
         return `
         Product: ${this.title}
         Description: ${this.description}
@@ -23,11 +24,11 @@ export class Product {
         Category: ${this.category}
         `;
     }
-
     //get price with discount
-    getPriceWithDiscount(): number {
+    getPriceWithDiscount() {
         const discountAmount = (this.price * this.discountPercentage) / 100;
         return this.price - discountAmount;
     }
 }
-
+exports.Product = Product;
+//# sourceMappingURL=Product.js.map

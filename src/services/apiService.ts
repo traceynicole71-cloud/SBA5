@@ -1,5 +1,5 @@
 //API requests
-import { AppError } from "./utilities/errorHandler";
+import { AppError } from "./errorHandler";
 
 const base_url = "https://dummyjson.com/products";
 
@@ -11,7 +11,7 @@ export async function fetchProducts(): Promise<ProductData[]> {
         }
     }
 
-    const data = await Response.json();
+    const data = await response.json();
     return data.products;
 } catch (error) {
     if (error instanceof AppError) {
